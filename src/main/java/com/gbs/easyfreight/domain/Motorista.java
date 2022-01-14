@@ -49,7 +49,6 @@ public class Motorista implements Serializable{
 	@OneToOne(mappedBy = "motorista")
 	private Conta contas;
 	
-	@JsonIgnore
 	@OneToMany(mappedBy = "motorista")	
 	private List<Frete> fretes = new ArrayList<>();
 	
