@@ -31,9 +31,8 @@ public class MotoristaResource {
 	@Autowired
 	private MotoristaService service;
 	
-	@RequestMapping(value="/{id}" , method = RequestMethod.GET)
+	@RequestMapping(value="/{id}", method = RequestMethod.GET)
 	public ResponseEntity<?> find(@PathVariable Integer id) {
-		
 		Motorista obj = service.find(id);
 		return ResponseEntity.ok().body(obj);		
 	}
