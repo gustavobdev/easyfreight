@@ -2,9 +2,13 @@ package com.gbs.easyfreight.domain;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
+import javax.persistence.CollectionTable;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -28,6 +32,26 @@ public class Cliente  implements Serializable {
 	@OneToMany(mappedBy = "cliente")
 	private List<Frete> fretes = new ArrayList<>();
 	
+	@ElementCollection
+	@CollectionTable(name="TELEFONES_CLIENTES")
+	private Set<String> telefones = new HashSet<>(); 
+	
+	public List<Frete> getFretes() {
+		return fretes;
+	}
+
+	public void setFretes(List<Frete> fretes) {
+		this.fretes = fretes;
+	}
+
+	public Set<String> getTelefones() {
+		return telefones;
+	}
+
+	public void setTelefones(Set<String> telefones) {
+		this.telefones = telefones;
+	}
+
 	public Cliente() {
 		
 	}

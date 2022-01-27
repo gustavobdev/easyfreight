@@ -31,6 +31,9 @@ public class MotoristaService {
 	@Autowired
 	private EnderecoRepository enderecoRepository;
 	
+	@Autowired
+	private EmailService emailService;
+	
 	public Motorista find(Integer id) {
 		Optional<Motorista> obj = repo.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException(
@@ -42,6 +45,8 @@ public class MotoristaService {
 		obj.setId(null);	
 		obj = repo.save(obj);
 		enderecoRepository.saveAll(obj.getEnderecos());
+		System.out.println(obj);
+		emailService.sendNewDataDriver(obj);
 		return obj;
 	}
 	

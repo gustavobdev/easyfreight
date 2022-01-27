@@ -8,6 +8,8 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 import com.gbs.easyfreight.services.DBService;
+import com.gbs.easyfreight.services.EmailService;
+import com.gbs.easyfreight.services.SmptEmailService;
 
 @Configuration
 @Profile("dev")
@@ -21,8 +23,13 @@ public class DevConfig {
 	public boolean instantiateDatabase() throws ParseException {
 		
 		dbService.instantiateTestDatabase();
-		
 		return true;
+	}
+	
+
+	@Bean
+	public EmailService emailService() {
+		return new SmptEmailService();
 	}
 	
 }

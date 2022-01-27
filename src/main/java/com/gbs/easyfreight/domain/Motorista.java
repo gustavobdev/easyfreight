@@ -240,6 +240,21 @@ public class Motorista implements Serializable{
 		return Objects.equals(id, other.id);
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Motorista [nome=");
+		builder.append(nome);
+		builder.append(", sobrenome=");
+		builder.append(sobrenome);
+		builder.append(", email=");
+		builder.append(email);
+		builder.append(", senha=");
+		builder.append(senha);
+		builder.append("]");
+		return builder.toString();
+	}
+
 	
 	
 	
