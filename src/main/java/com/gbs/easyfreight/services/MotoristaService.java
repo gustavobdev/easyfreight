@@ -46,7 +46,7 @@ public class MotoristaService {
 		obj = repo.save(obj);
 		enderecoRepository.saveAll(obj.getEnderecos());
 		System.out.println(obj);
-		emailService.sendNewDataDriver(obj);
+		emailService.sendConfirmationHtmlEmail(obj);
 		return obj;
 	}
 	
