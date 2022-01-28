@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title th:remove="all">Order Confirmation</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<div>
+<h1>
+Pedido número: <span th:text=""> </span>
+</h1>
+<p>
+Instante: <span
+th:text=""></span>
+</p>
+<p>
+Cliente: <span th:text=""></span>
+</p>
+<p>
+Situação do pagamento: <span
+th:text=""></span>
+</p>
+<h3>Detalhes do pedido:</h3>
+<table border="1">
+<tr>
+<th>Produto</th>
+<th>Quantidade</th>
+<th>Preço unitário</th>
+<th>Subtotal</th>
+</tr>
+<tr th:each="">
+<td th:text="">nome</td>
+<td th:text="">quantidade</td>
+<td th:text="">preco</td>
+<td th:text="">subTotal</td>
+</tr>
+</table>
+<p>
+Valor total: <span th:text=""></span>
+</p>
+</div>
+</body>
+</html>
